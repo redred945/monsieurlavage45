@@ -95,7 +95,7 @@
   }
   .bar__in { display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; padding-block: 0.85rem; }
   .bar__brand { display: flex; align-items: center; gap: 0.6rem; text-decoration: none; }
-  .bar__brand img { width: 38px; height: 38px; mix-blend-mode: multiply; }
+  .bar__brand img { width: 40px; height: 40px; border-radius: 50%; mix-blend-mode: multiply; }
   .bar__brand b { font-family: var(--ff-display); font-weight: 700; font-size: 1rem; letter-spacing: 0.01em; }
   .bar__nav { display: flex; gap: 2rem; }
   .bar__nav a { font-size: var(--fs-label); letter-spacing: 0.18em; text-transform: uppercase; text-decoration: none; color: var(--mid); font-weight: 600; transition: color .2s; }
@@ -116,7 +116,7 @@
     padding-left: max(var(--pad), calc((100vw - var(--maxw)) / 2 + var(--pad)));
     padding-right: clamp(1.5rem, 4vw, 3.5rem);
   }
-  .hero__badge { width: clamp(78px, 10vw, 104px); height: auto; mix-blend-mode: multiply; }
+  .hero__badge { width: clamp(78px, 10vw, 104px); aspect-ratio: 1; height: auto; border-radius: 50%; mix-blend-mode: multiply; }
   .hero h1 { font-size: var(--fs-h1); }
   .hero h1 .thin { font-weight: 500; color: var(--mid); }
   .hero__sub { color: var(--mid); font-size: var(--fs-lead); max-width: 42ch; }
