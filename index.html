@@ -19,15 +19,17 @@
     --accent: #cf4a25;      /* single action colour */
     --accent-hover: #b63f1e;
 
-    --maxw: 1240px;
+    --maxw: 1600px;
     --pad: clamp(1.25rem, 5vw, 4rem);
+    /* left edge of centred content — used to align the full-bleed hero copy */
+    --edge: max(var(--pad), calc((100vw - var(--maxw)) / 2 + var(--pad)));
 
     --fs-label: 0.72rem;
     --fs-body: 1.02rem;
     --fs-lead: clamp(1.05rem, 1.6vw, 1.22rem);
     --fs-h3: clamp(1.3rem, 2.4vw, 1.7rem);
     --fs-h2: clamp(2rem, 5vw, 3.4rem);
-    --fs-h1: clamp(2.6rem, 5.4vw, 4.4rem);
+    --fs-h1: clamp(2.6rem, 5vw, 5rem);
 
     --ff-display: "Bricolage Grotesque", "Arial Narrow", system-ui, sans-serif;
     --ff-body: "Hanken Grotesk", system-ui, -apple-system, "Segoe UI", sans-serif;
@@ -105,12 +107,15 @@
   /* ---------- hero ---------- */
   .hero { border-bottom: 1px solid var(--line); }
   .hero__grid {
-    display: grid; grid-template-columns: 1fr 1fr; align-items: stretch;
-    width: 100%; max-width: var(--maxw); margin-inline: auto;
+    display: grid; grid-template-columns: 1fr 1.08fr; align-items: stretch;
+    width: 100%;
   }
   .hero__left {
     display: flex; flex-direction: column; justify-content: center; gap: 1.5rem;
-    min-height: 66vh; padding: clamp(2.5rem, 6vw, 4.5rem) var(--pad);
+    min-height: 66vh;
+    padding-block: clamp(2.5rem, 6vw, 4.5rem);
+    padding-left: var(--edge);
+    padding-right: clamp(1.5rem, 4vw, 3.5rem);
   }
   .hero__badge { width: clamp(70px, 9vw, 96px); height: auto; }
   .hero h1 { font-size: var(--fs-h1); }
@@ -159,7 +164,7 @@
   }
 
   /* ---------- réalisations ---------- */
-  .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+  .grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
   .cell {
     position: relative; overflow: hidden; margin: 0;
     aspect-ratio: 4 / 3; border: 1px solid var(--line); background: var(--bg-2);
@@ -172,6 +177,7 @@
     background: var(--bg); border-top: 1px solid var(--line); border-right: 1px solid var(--line);
     padding: 0.4rem 0.7rem;
   }
+  @media (max-width: 1180px) { .grid { grid-template-columns: repeat(3, 1fr); } }
   @media (max-width: 860px) { .grid { grid-template-columns: repeat(2, 1fr); } }
   @media (max-width: 520px) { .grid { grid-template-columns: 1fr; } }
 
@@ -314,6 +320,8 @@
         <figure class="cell"><img src="assets/g4.jpg" alt="Détail feu arrière et carrosserie brillante" width="640" height="480" loading="lazy" /><span>Détail arrière</span></figure>
         <figure class="cell"><img src="assets/g5.jpg" alt="SUV de luxe sombre, profil après nettoyage complet" width="640" height="480" loading="lazy" /><span>Finition</span></figure>
         <figure class="cell"><img src="assets/g6.jpg" alt="Break sportif gris foncé, trois-quarts arrière et jantes" width="640" height="480" loading="lazy" /><span>Extérieur complet</span></figure>
+        <figure class="cell"><img src="assets/g7.jpg" alt="Berline foncée, détail roue et bas de caisse" width="640" height="480" loading="lazy" /><span>Jantes + bas de caisse</span></figure>
+        <figure class="cell"><img src="assets/g8.jpg" alt="Véhicule sombre lustré, reflets de carrosserie" width="640" height="480" loading="lazy" /><span>Lustrage</span></figure>
       </div>
       <p class="note">Photos : atelier Monsieur Lavage Checy — véhicules clients (Instagram @monsieur.lavage.checy45).</p>
     </div>
