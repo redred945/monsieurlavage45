@@ -103,11 +103,7 @@
   @media (max-width: 900px) { .bar__nav { display: none; } }
 
   /* ---------- hero ---------- */
-  .hero {
-    border-bottom: 1px solid var(--line);
-    /* left edge of centred content — aligns the full-bleed hero copy with .wrap */
-    --edge: max(var(--pad), calc((100% - var(--maxw)) / 2 + var(--pad)));
-  }
+  .hero { border-bottom: 1px solid var(--line); }
   .hero__grid {
     display: grid; grid-template-columns: 1fr 1.08fr; align-items: stretch;
     width: 100%;
@@ -116,7 +112,7 @@
     display: flex; flex-direction: column; justify-content: center; gap: 1.5rem;
     min-height: 66vh;
     padding-block: clamp(2.5rem, 6vw, 4.5rem);
-    padding-left: var(--edge);
+    padding-left: max(var(--pad), calc((100vw - var(--maxw)) / 2 + var(--pad)));
     padding-right: clamp(1.5rem, 4vw, 3.5rem);
   }
   .hero__badge { width: clamp(70px, 9vw, 96px); height: auto; }
