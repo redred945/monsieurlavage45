@@ -140,6 +140,15 @@
 
   /* ---------- generic section ---------- */
   section { padding-block: clamp(4rem, 9vw, 7.5rem); }
+  @media (max-width: 700px) {
+    section { padding-block: clamp(2.75rem, 10vw, 3.75rem); }
+    .hero { padding-block: 0; }
+    .hero__left { gap: 1.15rem; }
+    .head { margin-bottom: 1.9rem; }
+    .bar__brand svg { display: none; }
+    .bar__brand b { font-size: 0.92rem; white-space: nowrap; }
+    .bar__cta { font-size: 0.78rem; }
+  }
   .head { display: grid; gap: 1rem; max-width: 54ch; margin-bottom: clamp(2.4rem, 5vw, 3.6rem); }
   .head h2 { font-size: var(--fs-h2); }
   .head p { color: var(--mid); font-size: var(--fs-lead); }
